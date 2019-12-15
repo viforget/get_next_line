@@ -6,7 +6,7 @@
 /*   By: viforget <viforget@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/15 15:28:34 by viforget          #+#    #+#             */
-/*   Updated: 2019/12/15 15:56:14 by viforget         ###   ########.fr       */
+/*   Updated: 2019/12/15 16:53:58 by viforget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 # define SEP '\n'
 
-int 	get_next_line(int fd, char **line);
+int		get_next_line(int fd, char **line);
 size_t	ft_strlen(char *str);
 
 #endif

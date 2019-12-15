@@ -6,7 +6,7 @@
 /*   By: viforget <viforget@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 17:14:10 by viforget          #+#    #+#             */
-/*   Updated: 2019/12/15 16:33:57 by viforget         ###   ########.fr       */
+/*   Updated: 2019/12/15 16:53:40 by viforget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,18 @@ static size_t	find_n(char str[])
 	size_t	n;
 
 	n = 0;
-	while(str && str[n] && str[n] != SEP)
+	while (str && str[n] && str[n] != SEP)
 		n++;
 	return (n);
 }
 
-static char	*ft_strjoind(char *s1, char const *s2)
+static char		*ft_strjoind(char *s1, char const *s2)
 {
 	int		i;
 	int		i2;
 	char	*str;
 	int		len;
+
 	i = 0;
 	i2 = 0;
 	if (!s2)
@@ -65,8 +66,8 @@ static	void	cut_str(char str[], size_t n)
 
 int				get_next_line(int fd, char **line)
 {
-	static char buf[OPEN_MAX][BUFFER_SIZE + 1];
-	ssize_t 		rd;
+	static char	buf[OPEN_MAX][BUFFER_SIZE + 1];
+	ssize_t		rd;
 
 	*line = ft_strjoind(NULL, buf[fd]);
 	rd = BUFFER_SIZE + 1;
@@ -83,6 +84,5 @@ int				get_next_line(int fd, char **line)
 	if (*line[0] == 0 && buf[fd][0] == 0)
 		return (0);
 	cut_str(buf[fd], find_n(buf[fd]) + 1);
-	//printf("[%s]\n", buf[fd]);
-	return(1);
+	return (1);
 }

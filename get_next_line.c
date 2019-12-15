@@ -6,7 +6,7 @@
 /*   By: viforget <viforget@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/12 17:14:10 by viforget          #+#    #+#             */
-/*   Updated: 2019/12/15 19:43:27 by viforget         ###   ########.fr       */
+/*   Updated: 2019/12/15 21:09:34 by viforget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int				get_next_line(int fd, char **line)
 		cut_str(buf[fd], find_n(buf[fd]) + 1);
 		return (1);
 	}
-	while (rd == BUFFER_SIZE  && (rd = read(fd, buf[fd], BUFFER_SIZE)))
+	while (rd == BUFFER_SIZE && (rd = read(fd, buf[fd], BUFFER_SIZE)))
 	{
 		if (rd < 0 || BUFFER_SIZE <= 0)
 			return (-1);

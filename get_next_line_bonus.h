@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: viforget <viforget@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/16 08:56:32 by viforget          #+#    #+#             */
-/*   Updated: 2019/12/16 08:56:57 by viforget         ###   ########.fr       */
+/*   Created: 2019/12/18 09:25:19 by viforget          #+#    #+#             */
+/*   Updated: 2019/12/18 10:02:54 by viforget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 32
+#  define BUFFER_SIZE 42
 # endif
 
 # include <string.h>

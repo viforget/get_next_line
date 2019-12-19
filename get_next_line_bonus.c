@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: viforget <viforget@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/16 08:57:17 by viforget          #+#    #+#             */
-/*   Updated: 2019/12/16 08:57:55 by viforget         ###   ########.fr       */
+/*   Created: 2019/12/18 09:25:12 by viforget          #+#    #+#             */
+/*   Updated: 2019/12/18 09:25:30 by viforget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
 
 static size_t	find_n(char str[])
 {
@@ -46,11 +46,12 @@ static char		*ft_strjoind(char *s1, char const *s2)
 	return (str);
 }
 
-static void		fill_zero(char str[], ssize_t nb)
+static int		fill_zero(char str[], ssize_t nb)
 {
 	if (nb >= 0)
 		while (nb <= BUFFER_SIZE)
 			str[nb++] = 0;
+	return (0);
 }
 
 static	void	cut_str(char str[], size_t n)
@@ -69,7 +70,7 @@ int				get_next_line(int fd, char **line)
 	static char	buf[OPEN_MAX][BUFFER_SIZE + 1];
 	ssize_t		rd;
 
-	if (fd < 0 || fd > OPEN_MAX || !line)
+	if (fd < 0 || fd > OPEN_MAX || !line || BUFFER_SIZE <= 0)
 		return (-1);
 	*line = ft_strjoind(NULL, buf[fd]);
 	rd = BUFFER_SIZE;
@@ -80,15 +81,15 @@ int				get_next_line(int fd, char **line)
 	}
 	while (rd == BUFFER_SIZE && (rd = read(fd, buf[fd], BUFFER_SIZE)))
 	{
-		if (rd < 0 || BUFFER_SIZE <= 0)
+		if (rd < 0)
 			return (-1);
 		fill_zero(buf[fd], rd);
 		*line = ft_strjoind(*line, buf[fd]);
 		if (rd == BUFFER_SIZE)
 			rd = find_n(buf[fd]);
 	}
+	if (find_n(buf[fd]) == ft_strlen(buf[fd]))
+		return (fill_zero(buf[fd], 0));
 	cut_str(buf[fd], find_n(buf[fd]) + 1);
-	if (*line[0] == 0 && buf[fd][0] == 0)
-		return (0);
 	return (1);
 }

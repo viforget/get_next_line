@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: viforget <viforget@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/16 08:57:40 by viforget          #+#    #+#             */
-/*   Updated: 2019/12/16 08:57:51 by viforget         ###   ########.fr       */
+/*   Created: 2019/12/18 09:25:24 by viforget          #+#    #+#             */
+/*   Updated: 2019/12/18 09:25:36 by viforget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
 
 size_t	ft_strlen(char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: viforget <viforget@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 09:25:12 by viforget          #+#    #+#             */
-/*   Updated: 2019/12/18 09:25:30 by viforget         ###   ########.fr       */
+/*   Updated: 2019/12/19 14:00:17 by viforget         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static size_t	find_n(char str[])
 {
